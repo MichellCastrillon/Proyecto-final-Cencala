@@ -1,0 +1,487 @@
+
+*{
+    margin: 0;
+    padding:0;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Aplicando GRID*/
+
+.contenedorPrincipal {
+
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas: "header header"
+                         "about about"
+                         "main aside"
+                         "footer footer";
+}
+
+.contenedorPrincipal header {
+    grid-area: header;
+}
+
+.contenedorPrincipal .resumenApp {
+    grid-area: about;
+}
+
+.contenedorPrincipal .main {
+    grid-area: main;
+}
+
+.contenedorPrincipal .aside {
+    grid-area: aside;
+}
+
+.contenedorPrincipal footer {
+    grid-area: footer;
+}
+
+/*Header*/
+header{
+    width: 100%;
+    height: 640px;
+    background: #7F7FD5; 
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5); 
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.skewed{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-width: 150px 100vw 0 0;
+    border-color: transparent white transparent transparent;
+    border-style: solid;
+}
+
+/*Navegación*/
+.menu{
+    display:flex;
+    flex-flow:row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-family: sans-serif;
+}
+
+.menu__logo{
+    margin-left: 60px;
+}
+
+.menu__navBar{
+    margin-right: 60px;
+}
+
+.logo__imagen{
+    width: 80px;
+    height: 70px;
+    cursor: pointer;
+}
+  
+.navBar{
+    list-style: none;
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.navBar__items{
+    margin:0 20px;
+    position: relative;
+}
+
+.navBar__link{
+    text-decoration: none;
+    color: white;
+    font-size:17px;
+    font-weight: 300;
+}
+
+.navBar__link:hover{
+    text-decoration: none;
+    color: rgb(2, 241, 201);
+}
+  
+/*----Transición barra debajo de cada elemento del menu----*/
+
+.navBar__items::after{
+    content: "";
+    height: 3px;
+    width: 0%;
+    background-color: white;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.4s ease-out;
+}
+
+
+.navBar__items:hover::after{
+    width: 100%;
+}
+
+.textoarriba h2{
+    font-family: 'Raleway', sans-serif;
+}
+
+.menu__logo{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.tituloApp__texto{
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+.textoHeader__contenedor{
+    display:flex;
+    flex-flow: column nowrap;
+    align-items: center;
+}
+
+.textoHeader__titulo{
+    margin-top: 80px;
+    font-weight: 700;
+    color: white;
+    font-size: 70px;
+}
+
+.textoHeader__texto{
+    padding:40px 400px;
+}
+
+.iconos__item{
+    list-style: none;
+    margin: 50px 10px;
+    display: inline-block;
+    color: white;
+}
+
+.iconos__link{
+    font-size:25px;
+}
+
+.iconos__link:hover{
+    cursor: pointer;
+    transform: scale(2.1);
+    transition: transform 0.5s;
+}
+
+.tituloHacemos{
+    position: sticky;
+    left: 50%;
+    padding: 40px 0;
+    color: rgb(127, 127, 213);
+    font-size: 40px;
+    font-weight: 900;
+}
+
+/*Resumen APP*/
+
+.contenedorResumen{
+   display:flex;
+   flex-flow: column nowrap;
+   margin-top: 50px;
+   align-items: center;
+   width: 100%;
+}
+
+.resumenApp__texto{
+    text-align: center;
+    margin: 0 400px;
+    margin-bottom: 50px;
+    font-size: 19px;
+}
+
+.resumenApp__informacion{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+}
+
+.contenedorinformaciontTiempo{
+    margin-left: 100px;
+    padding: 20px 35px;
+    border: 3px solid rgb(127, 127, 213);
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+.contenedorinformacionAlarma{
+    padding: 20px 35px;
+    border: 3px solid rgb(127, 127, 213);
+    margin-right: 30px;
+    border-radius: 10px;
+}
+
+.contenedorinformacionSueño{
+    margin-right: 100px;
+    padding: 20px 35px;
+    border: 3px solid rgb(127, 127, 213);
+    border-radius: 10px;
+}
+
+.contenedorinformacion__titulo{
+    margin-bottom: 15px ;
+    font-size: 25px;
+}
+
+
+/*Main*/
+
+.contenedorMain{
+ display: flex;
+ flex-flow: column nowrap;
+ align-items: center;
+ margin-top: 40px;
+}
+
+.contenedorMain__imagen{
+    width: 400px;
+    height: 450px;
+}
+
+.contenedorMain__texto{
+    width: 600px;
+}
+
+.botonEnviar__btn{
+    width: 120px;
+    border-radius: 30px;
+    background: rgb(127, 127, 213);
+    color: white;
+    padding: 10px 0;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.botonEnviar__btn:hover{
+    transform: scale(1.2);
+    transition: transform 0.5s;
+    background: rgb(145, 234, 228);
+    border:none;
+    color: black;   
+}
+
+.contenedor__funcionesApp{
+    margin-top: 90px;
+    border-left: 4px solid black;
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.contenedorPrimera{
+    padding: 15px 40px;
+}
+
+.contenedorSegunda{
+    padding: 15px 40px;
+}
+
+.contenedorTercera{
+    padding: 15px 40px;
+}
+
+.contenedorPrimera__titulo{
+    padding-bottom: 15px;
+}
+
+.contenedorSegunda__titulo{
+    padding-bottom: 15px;
+}
+
+.contenedorTercera__titulo{
+    padding-bottom: 15px;
+}
+
+/*Footer*/
+.contenedorFooter{
+    margin-top: 50px;
+    background: #7F7FD5; 
+    background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);  
+    background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
+}
+
+.DerechosReservados{
+    text-align: center;
+    padding:40px 0;
+    width: 100%;
+ 
+}
+
+/*Reponsive Design*/
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+
+    /*HEADER*/
+    .menu__logo{
+        margin-left: 30px;
+    }
+    
+    .menu__navBar{
+        margin-right: 30px;
+    }
+    .navBar__link{
+        text-decoration: none;
+        color: white;
+        font-size:15px;
+        font-weight: 300;
+    }
+
+    .tituloApp__texto{
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+    }
+
+    .textoHeader__titulo{
+        margin-top: 40px;
+        font-weight: 700;
+        color: white;
+        font-size: 50px;
+    }
+    
+    .textoHeader__texto{
+        padding:40px 200px;
+    }
+    
+    .iconos__item{
+        list-style: none;
+        margin: 50px 10px;
+        display: inline-block;
+        color: white;
+    }
+    
+    .iconos__link{
+        font-size:25px;
+    }
+    
+    .iconos__link:hover{
+        cursor: pointer;
+        transform: scale(2.1);
+        transition: transform 0.5s;
+    }
+
+    .tituloHacemos{
+        position: sticky;
+        left: 50%;
+        color: rgb(127, 127, 213);
+        font-size: 28px;
+        font-weight: 900;
+        padding-top:60px;
+    }
+
+    /*RESUMEN*/
+    .resumenApp__texto{ 
+        text-align: center;
+        margin: 0 200px;
+        margin-bottom: 50px;
+        font-size: 16px;
+    }
+
+    .resumenApp__informacion{
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
+    }
+    .contenedorinformaciontTiempo{
+        margin:10px 25px;
+        border: 3px solid rgb(127, 127, 213);
+        border-radius: 10px;
+        padding: 10px 10px;
+    }
+    
+    .contenedorinformacionAlarma{
+        margin:10px 25px;
+        border: 3px solid rgb(127, 127, 213);
+        border-radius: 10px;
+        border-radius: 10px;
+        padding: 10px 10px;
+    }
+    
+    .contenedorinformacionSueño{    
+        margin:10px 25px;
+        border: 3px solid rgb(127, 127, 213);
+        border-radius: 10px;
+        border-radius: 10px;
+        padding: 10px 10px;
+    }
+    .contenedorinformacion__titulo{
+        font-size: 18px;
+    }
+
+    .contenedorinformacion__texto{
+        font-size: 15px;
+    }
+
+    /*Main*/
+    .contenedorMain__imagen{
+        margin-top: 50px;
+        width: 240px;
+        height: 250px;
+    } 
+
+    .contenedorMain__texto{
+        width: 400px;
+        font-size: 15px; 
+        padding:0 10px;
+    }
+
+    .botonEnviar__btn{
+        width: 120px;
+        border-radius: 30px;
+        background: rgb(127, 127, 213);
+        color: white;
+        padding: 10px 0;
+        cursor: pointer;
+        font-size: 15px;
+        margin-top: 30px;
+    }
+
+    /*aside*/
+    
+    .contenedorPrimera__titulo{
+        padding-bottom: 15px;
+        font-size: 18px;
+    }
+    
+    .contenedorSegunda__titulo{
+        padding-bottom: 15px;
+        font-size: 18px;
+    }
+    
+    .contenedorTercera__titulo{
+        padding-bottom: 15px;
+        font-size: 18px;
+    }
+
+    .contenedorPrimera__texto{
+        font-size: 15px;
+    }
+
+    .contenedorSegunda__texto{
+        font-size: 15px;
+    }
+
+    .contenedorTercera__texto{
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    
+}
+
+@media screen and (max-width: 480px) {
+
+}
