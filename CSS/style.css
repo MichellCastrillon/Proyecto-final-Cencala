@@ -5,7 +5,10 @@
   font-family: "Poppins", sans-serif;
 }
 
-/*Aplicando GRID*/
+/***********************************
+*              GRID                *
+************************************/
+/********GRID Página Home*********/
 .contenedorPrincipal {
   display: grid;
   grid-template-columns: repeat(2, auto);
@@ -33,10 +36,28 @@
   grid-area: footer;
 }
 
+/********GRID Página Servicios*********/
+.contenedorPrincipals {
+  display: grid;
+  grid-template-columns: repeat(1, auto);
+  grid-template-rows: repeat(4, auto);
+  grid-template-areas: "header" "resumen" "main" "footer";
+}
+
+.contenedorPrincipal .HeaderServicios {
+  grid-area: header;
+}
+
+.contenedorPrincipal .informacionApp {
+  grid-area: resumen;
+}
+
+.contenedorPrincipal .mainServicios {
+  grid-area: main;
+}
+
 /*Header*/
 header {
-  width: 100%;
-  height: 640px;
   background: #7F7FD5;
   background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
   background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
@@ -78,6 +99,10 @@ header {
   width: 80px;
   height: 70px;
   cursor: pointer;
+}
+
+.menu {
+  background: transparent;
 }
 
 .navBar {
@@ -151,11 +176,14 @@ header {
 
 .textoHeader__texto {
   padding: 40px 400px;
+  margin-bottom: 0;
 }
 
 .iconos__item {
   list-style: none;
-  margin: 50px 10px;
+  margin: 0 10px;
+  margin-top: 30px;
+  margin-bottom: 150px;
   display: inline-block;
   color: white;
 }
@@ -171,21 +199,18 @@ header {
 }
 
 .tituloHacemos {
-  position: sticky;
-  left: 50%;
-  padding: 40px 0;
+  text-align: center;
   color: #7f7fd5;
   font-size: 40px;
   font-weight: 900;
+  z-index: 10;
 }
 
 /*Resumen APP*/
 .contenedorResumen {
   display: flex;
   flex-flow: column nowrap;
-  margin-top: 50px;
   align-items: center;
-  width: 100%;
 }
 
 .resumenApp__texto {
@@ -298,6 +323,9 @@ header {
 /*Footer*/
 .contenedorFooter {
   margin-top: 50px;
+  margin-bottom: 0;
+  padding-bottom: 0;
+  height: 100px;
   background: #7F7FD5;
   background: -webkit-linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
   background: linear-gradient(to right, #91EAE4, #86A8E7, #7F7FD5);
@@ -305,12 +333,120 @@ header {
 
 .DerechosReservados {
   text-align: center;
-  padding: 40px 0;
+  padding-top: 40px;
   width: 100%;
 }
 
-/*Reponsive Design*/
-@media screen and (min-width: 768px) and (max-width: 1024px) {
+.ham {
+  display: none;
+  cursor: pointer;
+  border: none;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+}
+
+.ham span {
+  display: block;
+  background-color: white;
+  height: 3px;
+  width: 25px;
+  margin: 6px auto;
+  border-radius: 2px;
+}
+
+/***********************************
+*        Página servicios          *
+************************************/
+/***Header***/
+.HeaderServicios {
+  width: 100vw;
+  height: 500px;
+  background-image: url(/Images/pexels-photo-5673503.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.HeaderServicios:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(199, 108, 108, 0.1);
+}
+
+.tituloHeader {
+  margin-top: 250px;
+  font-size: 100px;
+  font-weight: 900;
+  color: white;
+}
+
+.informacionApp {
+  margin-top: 20px;
+}
+
+.carousel {
+  margin-top: 20px;
+  padding: 0 100px;
+}
+
+.informacionApp__titulo {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 50px;
+  color: #7f7fd5;
+  font-weight: 300;
+}
+
+.imagenCarousel {
+  width: 100%;
+  height: 400px;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.tituloCarousel {
+  color: black;
+  font-size: 30px;
+  font-weight: 300;
+}
+
+.textoCarousel {
+  color: black;
+  font-size: 20px;
+}
+
+/******Main servicios*****/
+.mainTitulo {
+  margin-top: 40px;
+  text-align: center;
+  color: #7f7fd5;
+}
+
+.contenedorMain__servicios {
+  margin-top: 50px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-evenly;
+}
+
+/***********************************
+*            PREPONSIVE            *
+************************************/
+/*****Reponsive Design HOME*******/
+/* Escritorio extra grande */
+/* Escritorio grande */
+/* Escritorio pequeño / tablet */
+@media screen and (min-width: 768px) and (max-width: 991px) {
   /*HEADER*/
   .menu__logo {
     margin-left: 30px;
@@ -361,20 +497,18 @@ header {
     transition: transform 0.5s;
   }
 
+  /*RESUMEN*/
   .tituloHacemos {
-    position: sticky;
-    left: 50%;
     color: #7f7fd5;
-    font-size: 28px;
+    font-size: 27px;
     font-weight: 900;
-    padding-top: 60px;
+    margin-bottom: 10px;
   }
 
-  /*RESUMEN*/
   .resumenApp__texto {
     text-align: center;
-    margin: 0 200px;
-    margin-bottom: 50px;
+    margin: 0 150px;
+    margin-bottom: 30px;
     font-size: 16px;
   }
 
@@ -467,5 +601,276 @@ header {
     font-size: 15px;
   }
 }
+/* Tablets y phablets */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  /*NavBar reponsive*/
+  .menu {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+  }
+
+  .menu__logo {
+    margin-left: 60px;
+  }
+
+  .menu__navBar {
+    margin-right: 60px;
+  }
+
+  .logo__imagen {
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+  }
+
+  .tituloApp__texto {
+    padding-top: 10px;
+    color: white;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .navBar__link {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  .ham {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 35px;
+  }
+
+  .navBar {
+    flex-flow: column nowrap;
+    align-items: flex-start;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    display: none;
+  }
+
+  .navBar.activado {
+    display: flex;
+  }
+
+  .navBar__link:hover {
+    text-decoration: none;
+    color: #2602f1;
+  }
+
+  /*Header reponsive*/
+  .textoHeader__titulo {
+    margin-top: 80px;
+    font-weight: 700;
+    color: white;
+    font-size: 50px;
+  }
+
+  .textoHeader__texto {
+    padding: 40px 250px;
+    margin-bottom: 0;
+    font-size: 13px;
+  }
+
+  .iconos__item {
+    list-style: none;
+    margin: 0 10px;
+    margin-top: 30px;
+    margin-bottom: 150px;
+    display: inline-block;
+    color: white;
+  }
+
+  /*HACEMOS*/
+  .resumenApp__informacion {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    margin-bottom: 10px;
+  }
+
+  .tituloHacemos {
+    text-align: center;
+    color: #7f7fd5;
+    font-size: 35px;
+    font-weight: 900;
+    z-index: 10;
+  }
+
+  .resumenApp__texto {
+    text-align: center;
+    margin: 0 200px;
+    padding-top: 20px;
+    margin-bottom: 50px;
+    font-size: 13px;
+  }
+
+  .contenedorinformaciontTiempo {
+    margin-left: 60px;
+    padding: 20px 35px;
+    border: 3px solid #7f7fd5;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  .contenedorinformacionAlarma {
+    padding: 20px 35px;
+    border: 3px solid #7f7fd5;
+    margin-right: 20px;
+    border-radius: 10px;
+  }
+
+  .contenedorinformacionSueño {
+    margin-right: 60px;
+    padding: 20px 35px;
+    border: 3px solid #7f7fd5;
+    border-radius: 10px;
+  }
+
+  .contenedorinformacion__titulo {
+    margin-bottom: 15px;
+    font-size: 20px;
+  }
+
+  .contenedorinformacion__texto {
+    font-size: 12px;
+  }
+
+  /*MAIN*/
+  .contenedorMain__imagen {
+    width: 260px;
+    height: 340px;
+    padding-top: 30px;
+  }
+
+  .contenedorMain__texto {
+    width: 400px;
+    font-size: 12px;
+    text-align: justify;
+    padding: 20px;
+  }
+
+  .botonEnviar__btn {
+    width: 120px;
+    border-radius: 30px;
+    background: #7f7fd5;
+    color: white;
+    padding: 8px 0;
+    cursor: pointer;
+    font-size: 13px;
+  }
+
+  .contenedor__funcionesApp {
+    margin-top: 90px;
+    border-left: 4px solid black;
+    display: flex;
+    flex-flow: column nowrap;
+    text-align: justify;
+    font-size: 12px;
+  }
+
+  .contenedorPrimera, .contenedorSegunda, .contenedorTercera {
+    padding: 3px 40px;
+  }
+
+  .contenedorPrimera__titulo, .contenedorTercera__titulo, .contenedorSegunda__titulo {
+    padding-bottom: 5px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+
+  /*Footer*/
+  .DerechosReservados {
+    text-align: center;
+    padding-top: 40px;
+    width: 100%;
+    font-size: 13px;
+  }
+}
+/* Teléfonos */
+/*REPONSIVE PAGINA SERVICIOS*/
+/* Escritorio pequeño / tablet */
+/* Tablets y phablets */
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  /*Header*/
+  .contenedorMain__servicios {
+    margin-top: 50px;
+    padding: 0 30px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+
+  .tituloHeader {
+    margin: 0;
+    padding-top: 100px;
+    font-size: 70px;
+    font-weight: 900;
+    color: white;
+  }
+
+  /*Servicios APP*/
+  .informacionApp__titulo {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 40px;
+    color: #7f7fd5;
+    font-weight: 300;
+  }
+
+  .imagenCarousel {
+    width: 100%;
+    height: 400px;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+  }
+
+  .carousel, .carousel-inner > .item > img {
+    width: 800px;
+  }
+
+  #carouselExampleCaptions {
+    padding: 15px 35px;
+  }
+
+  .carousel {
+    margin-top: 20px;
+    padding: 0 50px;
+  }
+
+  /*Que hace la app*/
+  .mainTitulo {
+    margin-top: 30px;
+    text-align: center;
+    color: #7f7fd5;
+  }
+
+  .contenedorMain__servicios {
+    margin-top: 50px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-text {
+    font-size: 12px;
+  }
+
+  .btn {
+    height: 20px;
+    width: 100px;
+    font-size: 100px;
+  }
+}
+/* Teléfonos */
 
 /*# sourceMappingURL=style.css.map */
